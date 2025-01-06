@@ -12,7 +12,10 @@ const productSchema = new mongoose.Schema({
   brand: { type: String, required: false },
   specifications: {
     size: [{ type: String, enum: ["S", "M", "L", "XL", "XXL"] }],
-    color: [{ type: String }],
+    color: {
+      type: Map,
+      of: [String],
+    },
   },
   reviews: [
     {

@@ -3,9 +3,9 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 
 // Import your models
-const User = require("./models/User");
-const Product = require("./models/Product");
-const Order = require("./models/Order");
+const User = require("./models/users");
+const Product = require("./models/products");
+const Order = require("./models/orders");
 
 const app = express();
 const port = process.env.PORT || 3000;

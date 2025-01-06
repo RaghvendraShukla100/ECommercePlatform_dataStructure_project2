@@ -8,7 +8,7 @@ import ProductList from "./components/ProductList";
 import ProductDetail from "./components/ProductDetail";
 import Cart from "./components/Cart";
 import OrderSummary from "./components/OrderSummary";
-import Admin from "./components/Admin"; // Import Admin component
+import Admin from "./components/admin/Admin"; // Import Admin component
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(

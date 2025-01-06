@@ -1,32 +1,41 @@
 const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
 
-const addressSchema = new Schema({
-  street: { type: String, required: true },
-  city: { type: String, required: true },
-  state: { type: String, required: true },
-  zip: { type: String, required: true },
-});
-
-const orderItemSchema = new Schema({
-  productId: { type: Schema.Types.ObjectId, required: true },
-  name: { type: String, required: true },
-  price: { type: Number, required: true },
-  quantity: { type: Number, required: true },
-});
-
-const orderSchema = new Schema({
-  _id: { type: Schema.Types.ObjectId, auto: true },
-  userId: { type: Schema.Types.ObjectId, required: true, ref: "User" },
-  orderDate: { type: Date, default: Date.now, required: true },
-  status: { type: String, required: true },
-  shippingAddress: { type: addressSchema, required: true },
-  billingAddress: { type: addressSchema, required: true },
+const orderSchema = new mongoose.Schema({
+  _id: mongoose.Schema.Types.ObjectId,
+  userId: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
+  orderDate: { type: Date, required: true },
+  status: {
+    type: String,
+    enum: ["Pending", "Processing", "Shipped", "Delivered", "Cancelled"],
+    required: true,
+  },
+  shippingAddress: {
+    street: { type: String, required: true },
+    city: { type: String, required: true },
+    state: { type: String, required: true },
+    zipCode: { type: String, required: true },
+    country: { type: String, required: true },
+  },
+  billingAddress: {
+    street: { type: String, required: true },
+    city: { type: String, required: true },
+    state: { type: String, required: true },
+    zipCode: { type: String, required: true },
+    country: { type: String, required: true },
+  },
   paymentMethod: { type: String, required: true },
   totalPrice: { type: Number, required: true },
-  orderItems: { type: [orderItemSchema], required: true },
+  orderItems: [
+    {
+      productId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Product",
+        required: true,
+      },
+      quantity: { type: Number, required: true },
+      price: { type: Number, required: true },
+    },
+  ],
 });
 
-const Order = mongoose.model("Order", orderSchema);
-
-module.exports = Order;
+module.exports = mongoose.model("Order", orderSchema);

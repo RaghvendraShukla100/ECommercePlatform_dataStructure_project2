@@ -1,24 +1,16 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
+import { useForm } from "react-hook-form";
 import { setOrder } from "../slices/orderSlice";
 
 const Admin = () => {
   const [products, setProducts] = useState([]);
   const [orders, setOrders] = useState([]);
-  const [newProduct, setNewProduct] = useState({
-    name: "",
-    description: "",
-    category: "",
-    subcategory: "",
-    price: "",
-    images: "",
-    stock: "",
-    brand: "",
-    specifications: "",
-  });
   const dispatch = useDispatch();
   const order = useSelector((state) => state.order);
+
+  const { register, handleSubmit, reset } = useForm();
 
   useEffect(() => {
     fetchProducts();
@@ -43,27 +35,22 @@ const Admin = () => {
     }
   };
 
-  const addProduct = async () => {
+  const onSubmit = async (data) => {
     try {
-      // Split image URLs by comma and parse specifications as an object
       const newProductData = {
-        ...newProduct,
-        images: newProduct.images.split(",").map((img) => img.trim()),
-        specifications: JSON.parse(newProduct.specifications),
+        ...data,
+        images: [
+          data.image1,
+          data.image2,
+          data.image3,
+          data.image4,
+          data.image5,
+        ].filter(Boolean),
+        specifications: JSON.parse(data.specifications),
       };
       const response = await axios.post("/products", newProductData);
       setProducts([...products, response.data]);
-      setNewProduct({
-        name: "",
-        description: "",
-        category: "",
-        subcategory: "",
-        price: "",
-        images: "",
-        stock: "",
-        brand: "",
-        specifications: "",
-      });
+      reset();
     } catch (err) {
       console.error("Error adding product:", err);
     }
@@ -104,99 +91,104 @@ const Admin = () => {
   };
 
   return (
-    <div className="p-4">
+    <div className="p-4 box-border">
       <h1 className="text-2xl font-bold mb-4">Admin Dashboard</h1>
 
       <div className="mb-8">
         <h2 className="text-xl font-semibold mb-2">Add New Product</h2>
-        <input
-          type="text"
-          placeholder="Name"
-          value={newProduct.name}
-          onChange={(e) =>
-            setNewProduct({ ...newProduct, name: e.target.value })
-          }
-          className="border p-2 mb-2"
-        />
-        <input
-          type="text"
-          placeholder="Description"
-          value={newProduct.description}
-          onChange={(e) =>
-            setNewProduct({ ...newProduct, description: e.target.value })
-          }
-          className="border p-2 mb-2"
-        />
-        <input
-          type="text"
-          placeholder="Category"
-          value={newProduct.category}
-          onChange={(e) =>
-            setNewProduct({ ...newProduct, category: e.target.value })
-          }
-          className="border p-2 mb-2"
-        />
-        <input
-          type="text"
-          placeholder="Subcategory"
-          value={newProduct.subcategory}
-          onChange={(e) =>
-            setNewProduct({ ...newProduct, subcategory: e.target.value })
-          }
-          className="border p-2 mb-2"
-        />
-        <input
-          type="number"
-          placeholder="Price"
-          value={newProduct.price}
-          onChange={(e) =>
-            setNewProduct({ ...newProduct, price: e.target.value })
-          }
-          className="border p-2 mb-2"
-        />
-        <input
-          type="text"
-          placeholder="Image URLs (comma separated)"
-          value={newProduct.images}
-          onChange={(e) =>
-            setNewProduct({ ...newProduct, images: e.target.value })
-          }
-          className="border p-2 mb-2"
-        />
-        <input
-          type="number"
-          placeholder="Stock"
-          value={newProduct.stock}
-          onChange={(e) =>
-            setNewProduct({ ...newProduct, stock: e.target.value })
-          }
-          className="border p-2 mb-2"
-        />
-        <input
-          type="text"
-          placeholder="Brand"
-          value={newProduct.brand}
-          onChange={(e) =>
-            setNewProduct({ ...newProduct, brand: e.target.value })
-          }
-          className="border p-2 mb-2"
-        />
-        <textarea
-          placeholder="Specifications (JSON format)"
-          value={newProduct.specifications}
-          onChange={(e) =>
-            setNewProduct({ ...newProduct, specifications: e.target.value })
-          }
-          className="border p-2 mb-2"
-        />
-        <button
-          onClick={addProduct}
-          className="bg-green-500 text-white p-2 rounded"
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="border p-5 flex flex-col box-border  w-6/12"
         >
-          Add Product
-        </button>
+          <input
+            type="text"
+            placeholder="Name"
+            {...register("name", { required: true })}
+            className="border p-2 mb-2"
+          />
+          <input
+            type="text"
+            placeholder="Description"
+            {...register("description", { required: true })}
+            className="border p-2 mb-2"
+          />
+          <input
+            type="text"
+            placeholder="Category"
+            {...register("category", { required: true })}
+            className="border p-2 mb-2"
+          />
+          <input
+            type="text"
+            placeholder="Subcategory"
+            {...register("subcategory", { required: true })}
+            className="border p-2 mb-2"
+          />
+          <input
+            type="number"
+            placeholder="Price"
+            {...register("price", { required: true })}
+            className="border p-2 mb-2"
+          />
+          <div className="bg-gray-600 border m-1 p-2">
+            <h2>Product Image</h2>
+            <div className="grid grid-cols-2 gap-x-2">
+              <input
+                type="text"
+                placeholder="Image URL 1"
+                {...register("image1", { required: true })}
+                className="border p-2 mb-2"
+              />
+              <input
+                type="text"
+                placeholder="Image URL 2"
+                {...register("image2")}
+                className="border p-2 mb-2"
+              />
+              <input
+                type="text"
+                placeholder="Image URL 3"
+                {...register("image3")}
+                className="border p-2 mb-2"
+              />
+              <input
+                type="text"
+                placeholder="Image URL 4"
+                {...register("image4")}
+                className="border p-2 mb-2"
+              />
+              <input
+                type="text"
+                placeholder="Image URL 5"
+                {...register("image5")}
+                className="border p-2 mb-2"
+              />
+            </div>
+          </div>
+          <input
+            type="number"
+            placeholder="Stock"
+            {...register("stock", { required: true })}
+            className="border p-2 mb-2"
+          />
+          <input
+            type="text"
+            placeholder="Brand"
+            {...register("brand")}
+            className="border p-2 mb-2"
+          />
+          <textarea
+            placeholder="Specifications (JSON format)"
+            {...register("specifications", { required: true })}
+            className="border p-2 mb-2"
+          />
+          <button type="submit" className="bg-green-500 text-white p-2 rounded">
+            Add Product
+          </button>
+        </form>
       </div>
 
+      {/* product list is here */}
       <div className="mb-8">
         <h2 className="text-xl font-semibold mb-2">Product List</h2>
         <ul>
@@ -225,6 +217,7 @@ const Admin = () => {
         </ul>
       </div>
 
+      {/* order list is here  */}
       <div>
         <h2 className="text-xl font-semibold mb-2">Order List</h2>
         <ul>

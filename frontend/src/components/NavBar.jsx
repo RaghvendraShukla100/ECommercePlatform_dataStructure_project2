@@ -40,6 +40,14 @@ const Navbar = () => {
           >
             Order Summary
           </NavLink>
+          <NavLink
+            to="/admin"
+            className={({ isActive }) =>
+              isActive ? "text-yellow-500 mx-2" : "text-white mx-2"
+            }
+          >
+            Admin
+          </NavLink>
         </div>
       </div>
     </nav>

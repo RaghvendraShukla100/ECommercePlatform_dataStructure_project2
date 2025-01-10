@@ -1,0 +1,46 @@
+{
+  "name": "iphone",
+  "description": "sdzfcsdkj s wesduh fwlkezhf wseh ihweishd c  wesdhw esdsc",
+  "price": 15680,
+  "stock": 458,
+  "origin": "india",
+  "specification": {
+    "brand": "apple",
+    "model": "16 pro",
+    "operatingSystem": "ios",
+    "ram": "16",
+    "rom": "256",
+    "cpuModel": "ios model",
+    "cpuSpeed": "50 hz",
+    "battery": "6000 mah",
+    "displayResolution": "1080",
+    "simType": "e sim",
+    "whatsInTheBox": "handset",
+    "colors": [
+      {
+        "color": "black",
+        "imgLink": [
+          "jhzwdsedzf34w8eyr23we",
+          "weirhifuewdsj",
+          "wjrsedfjkwebshfd",
+          "wseiruud92384we98ru349rehgiu3erhf",
+          "wesdfjhsbdjvhbs",
+          "sefdi3we9sr98wuese"
+        ]
+      },
+      {
+        "color": "blue",
+        "imgLink": [
+          "jhzwdsedzf34w8eyr23we",
+          "weirhifuewdsj",
+          "wjrsedfjkwebshfd",
+          "wseiruud92384we98ru349rehgiu3erhf",
+          "wesdfjhsbdjvhbs",
+          "sefdi3we9sr98wuese"
+        ]
+      }
+    ]
+  },
+  "category": "electronics",
+  "subcategory": "mobile"
+}

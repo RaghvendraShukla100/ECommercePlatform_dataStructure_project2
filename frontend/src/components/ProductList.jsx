@@ -5,31 +5,34 @@ const ProductList = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("/products")
-      .then((response) => {
-        // Ensure the response data is an array
-        if (Array.isArray(response.data)) {
-          setProducts(response.data);
+    const fetchProducts = async () => {
+      try {
+        const response = await axios.get("http://localhost:3000/api/products");
+        const data = response.data;
+        console.log(data);
+        if (Array.isArray(data)) {
+          setProducts(data);
         } else {
-          console.error("API response is not an array");
-          setProducts([]);
+          console.error("API response is not an array:", data);
         }
-      })
-      .catch((err) => {
-        console.error("Error fetching products:", err);
-        setProducts([]);
-      });
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
+    };
+
+    fetchProducts();
   }, []);
 
+  if (products.length === 0) {
+    return <div>Loading...</div>;
+  }
+
   return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Products</h1>
-      <ul className="space-y-2">
+    <div>
+      <h1>Product List</h1>
+      <ul>
         {products.map((product) => (
-          <li key={product._id} className="border p-2 rounded">
-            <a href={`/products/${product._id}`}>{product.name}</a>
-          </li>
+          <li key={product._id}>{product.name}</li>
         ))}
       </ul>
     </div>

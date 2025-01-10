@@ -10,6 +10,7 @@ import Cart from "./components/Cart";
 import OrderSummary from "./components/OrderSummary";
 import Admin from "./components/admin/Admin"; // Import Admin component
 import "./index.css";
+import AddProductsHibrid from "./components/admin/products/AddProductsHibrid";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -21,6 +22,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             <Route path="/products/:id" element={<ProductDetail />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/order-summary" element={<OrderSummary />} />
+            <Route path="/product-hybrid" element={<AddProductsHibrid />} />
             <Route path="/admin" element={<Admin />} /> {/* Add Admin route */}
           </Route>
         </Routes>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
+//local state of the component
 const AddProduct = () => {
   const [product, setProduct] = useState({
     name: "",
@@ -15,12 +16,21 @@ const AddProduct = () => {
       size: [],
       color: new Map(),
     },
-    reviews: [],
+    reviews: [
+      {
+        user: "my user id",
+        rating: "4",
+        comment: "very good product.",
+      },
+    ],
   });
 
   const [colorFields, setColorFields] = useState([
     { colorName: "", colorValues: "" },
   ]);
+
+  const [errorMessage, setErrorMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -54,7 +64,6 @@ const AddProduct = () => {
   const addColorField = () => {
     setColorFields([...colorFields, { colorName: "", colorValues: "" }]);
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -62,28 +71,62 @@ const AddProduct = () => {
     const colorMap = new Map();
     colorFields.forEach(({ colorName, colorValues }) => {
       if (colorName && colorValues) {
-        colorMap.set(colorName, colorValues.split(","));
+        colorMap.set(
+          colorName,
+          colorValues.split(",").map((value) => value.trim())
+        ); // Trim any leading spaces
       }
     });
 
     const productData = {
       ...product,
+      price: Number(product.price), // Convert price to number
+      stock: Number(product.stock), // Convert stock to number
       specifications: {
         ...product.specifications,
         color: Object.fromEntries(colorMap),
       },
     };
 
-    console.log(productData);
+    // Log product data
+    console.log(
+      "Submitting Product Data:",
+      JSON.stringify(productData, null, 2)
+    );
 
     try {
       const response = await axios.post(
-        "YOUR_SERVER_ENDPOINT_HERE",
+        "http://localhost:3000/api/products",
         productData
       );
-      console.log(response.data);
+      setSuccessMessage("Product added successfully!");
+      setProduct({
+        name: "",
+        description: "",
+        category: "",
+        subcategory: "",
+        price: "",
+        images: [""],
+        stock: "",
+        brand: "",
+        specifications: {
+          size: [],
+          color: new Map(),
+        },
+        reviews: [
+          {
+            user: "my user id",
+            rating: 4, // Ensure rating is a number
+            comment: "very good product.",
+          },
+        ],
+      });
+      setColorFields([{ colorName: "", colorValues: "" }]);
     } catch (error) {
-      console.error("There was an error submitting the form!", error);
+      setErrorMessage(
+        "There was an error submitting the form. Please try again."
+      );
+      console.error(error.response?.data || error.message);
     }
   };
 
@@ -92,6 +135,8 @@ const AddProduct = () => {
       <h2 className="text-2xl text-gray-900 text-center font-bold mb-4">
         Add Product
       </h2>
+      {errorMessage && <p className="text-red-500">{errorMessage}</p>}
+      {successMessage && <p className="text-green-500">{successMessage}</p>}
       <form onSubmit={handleSubmit} className="space-y-4">
         <input
           type="text"

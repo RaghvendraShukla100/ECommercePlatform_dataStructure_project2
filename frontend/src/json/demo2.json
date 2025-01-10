@@ -1,0 +1,64 @@
+{
+  "_id": { "$oid": "677d6a8d346c504dc790481a" },
+  "name": "Levi's Men's Spread Collar Slim Fit Solid Shirts",
+  "description": "The perfect blend of comfortable fabric and a timeless design come together to create this full sleeves shirt by Levi's. With a slim fit and spread collar, it's simple yet stylish. Best of all, its pure cotton construction makes it light and soft for everyday Wear this shirt with a pair of light denim and your favorite sneakers. 1. Lightweight pure cotton fabric 2. Stylish solid pattern 3. Classic spread collar and full sleeves",
+  "category": "cloths",
+  "subcategory": "men",
+  "price": { "$numberInt": "2500" },
+  "images": [
+    "https://m.media-amazon.com/images/I/51wdfMMO7LL._SX679_.jpg",
+    "https://m.media-amazon.com/images/I/51x4LfPWegL._SX679_.jpg",
+    "https://m.media-amazon.com/images/I/51v3qtMlipL._SX679_.jpg",
+    "https://m.media-amazon.com/images/I/61CGd+jzkIL._SX679_.jpg",
+    "https://m.media-amazon.com/images/I/51EaSKWN35L._SX679_.jpg",
+    "https://m.media-amazon.com/images/I/51EaSKWN35L._SX679_.jpg"
+  ],
+  "stock": { "$numberInt": "456" },
+  "brand": "Levi's",
+  "specifications": {
+    "size": ["S", "M", "L", "XL", "XXL"],
+    "color": {
+      "black": [
+        "https://m.media-amazon.com/images/I/51++3ekajpL._SX679_.jpg",
+        "https://m.media-amazon.com/images/I/51nHcjzM7eL._SX679_.jpg",
+        "https://m.media-amazon.com/images/I/51iFR05Je2L._SX679_.jpg",
+        "https://m.media-amazon.com/images/I/51pBjetkRkL._SX679_.jpg",
+        "https://m.media-amazon.com/images/I/5119G8yaGkL._SX679_.jpg",
+        "https://m.media-amazon.com/images/I/5119G8yaGkL._SX679_.jpg"
+      ],
+      "green": [
+        "https://m.media-amazon.com/images/I/51wdfMMO7LL._SX679_.jpg",
+        "https://m.media-amazon.com/images/I/51x4LfPWegL._SX679_.jpg",
+        "https://m.media-amazon.com/images/I/51v3qtMlipL._SX679_.jpg",
+        "https://m.media-amazon.com/images/I/61CGd+jzkIL._SX679_.jpg",
+        "https://m.media-amazon.com/images/I/51EaSKWN35L._SX679_.jpg",
+        "https://m.media-amazon.com/images/I/51EaSKWN35L._SX679_.jpg"
+      ],
+      "orange": [
+        "https://m.media-amazon.com/images/I/51xKK04zhwL._SX679_.jpg",
+        "https://m.media-amazon.com/images/I/51OdSxPxYyL._SX679_.jpg",
+        "https://m.media-amazon.com/images/I/51BuT1ksWKL._SX679_.jpg",
+        "https://m.media-amazon.com/images/I/61+GOshC3VL._SX679_.jpg",
+        "https://m.media-amazon.com/images/I/51bFudfs+ZL._SX679_.jpg",
+        "https://m.media-amazon.com/images/I/51bFudfs+ZL._SX679_.jpg"
+      ],
+      "purpel": [
+        "https://m.media-amazon.com/images/I/51Z6RbNrurL._SX679_.jpg",
+        "https://m.media-amazon.com/images/I/51dQUftPecL._SX679_.jpg",
+        "https://m.media-amazon.com/images/I/517+zR6vZGL._SX679_.jpg",
+        "https://m.media-amazon.com/images/I/617wFL1JLyL._SX679_.jpg",
+        "https://m.media-amazon.com/images/I/51zK9fmgUNL._SX679_.jpg",
+        "https://m.media-amazon.com/images/I/51zK9fmgUNL._SX679_.jpg"
+      ]
+    }
+  },
+  "reviews": [
+    {
+      "user": "my user id",
+      "rating": { "$numberInt": "4" },
+      "comment": "very good product.",
+      "_id": { "$oid": "677d6a8d346c504dc790481b" }
+    }
+  ],
+  "__v": { "$numberInt": "0" }
+}

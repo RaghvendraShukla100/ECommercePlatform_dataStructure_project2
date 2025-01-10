@@ -1,0 +1,58 @@
+{
+  "_id": { "$oid": "677d6d72346c504dc790481d" },
+  "name": "Amazon Brand - Symbol Men's Solid Cotton Shirt | Casual | Plain | Full Sleeve | Summer-Regular Fit (Available in Plus Size)",
+  "description": "An Amazon brand, symbol is built on the pillars of quality, reliability and affordability, offering a range of lifestyle essentials that help you look good every day. This regular fit 100% cotton solid shirt is styled with classic collar and single chest pocket on wearers left. Wear this shirt with a pair of chinos or denims for your everyday casual look.",
+  "category": "cloths",
+  "subcategory": "men",
+  "price": { "$numberInt": "1899" },
+  "images": [
+    "https://m.media-amazon.com/images/I/71UnjM6ErlL._SX569_.jpg",
+    "https://m.media-amazon.com/images/I/610sLbyGrzL._SX569_.jpghttps://m.media-amazon.com/images/I/61Iq-K0CYbL._SX569_.jpg",
+    "https://m.media-amazon.com/images/I/715Sl0gbjeL._SX569_.jpghttps://m.media-amazon.com/images/I/71+6j4pEgML._SX569_.jpghttps://m.media-amazon.com/images/I/71bSeebsOfL._SY741_.jpg"
+  ],
+  "stock": { "$numberInt": "1700" },
+  "brand": "symbol",
+  "specifications": {
+    "size": ["S", "M", "L", "XL", "XXL"],
+    "color": {
+      "black": [
+        "https://m.media-amazon.com/images/I/71UnjM6ErlL._SX569_.jpg",
+        "https://m.media-amazon.com/images/I/610sLbyGrzL._SX569_.jpghttps://m.media-amazon.com/images/I/61Iq-K0CYbL._SX569_.jpg",
+        "https://m.media-amazon.com/images/I/715Sl0gbjeL._SX569_.jpghttps://m.media-amazon.com/images/I/71+6j4pEgML._SX569_.jpghttps://m.media-amazon.com/images/I/71bSeebsOfL._SY741_.jpg"
+      ],
+      "dark gray": [
+        "https://m.media-amazon.com/images/I/71blXygpkyL._SX569_.jpg",
+        "https://m.media-amazon.com/images/I/71GSenu2fSL._SY741_.jpg",
+        "https://m.media-amazon.com/images/I/71hyym8TY0L._SX569_.jpg",
+        "https://m.media-amazon.com/images/I/911Ato2i7KL._SX569_.jpg",
+        "https://m.media-amazon.com/images/I/91Z9F5OvoEL._SX569_.jpg",
+        "https://m.media-amazon.com/images/I/71bSeebsOfL._SY741_.jpg"
+      ],
+      "red": [
+        "https://m.media-amazon.com/images/I/71xigIyC1EL._SX569_.jpg",
+        "https://m.media-amazon.com/images/I/71tyoU7rTRL._SX569_.jpg",
+        "https://m.media-amazon.com/images/I/61+UfG4xbaL._SX569_.jpg",
+        "https://m.media-amazon.com/images/I/81MZkUtb27L._SX569_.jpg",
+        "https://m.media-amazon.com/images/I/81yZuhGWvBL._SX569_.jpg",
+        "https://m.media-amazon.com/images/I/71bSeebsOfL._SY741_.jpg"
+      ],
+      "brown": [
+        "https://m.media-amazon.com/images/I/71hojiKnfML._SX569_.jpg",
+        "https://m.media-amazon.com/images/I/71dJ+wqAH7L._SX569_.jpg",
+        "https://m.media-amazon.com/images/I/71ptVk13uWL._SX569_.jpg",
+        "https://m.media-amazon.com/images/I/91bD02-oSZL._SX569_.jpg",
+        "https://m.media-amazon.com/images/I/91swt1RGJLL._SX569_.jpg",
+        "https://m.media-amazon.com/images/I/71bSeebsOfL._SY741_.jpg"
+      ]
+    }
+  },
+  "reviews": [
+    {
+      "user": "my user id",
+      "rating": { "$numberInt": "4" },
+      "comment": "very good product.",
+      "_id": { "$oid": "677d6d72346c504dc790481e" }
+    }
+  ],
+  "__v": { "$numberInt": "0" }
+}

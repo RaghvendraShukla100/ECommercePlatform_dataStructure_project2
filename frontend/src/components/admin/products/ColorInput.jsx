@@ -7,7 +7,11 @@ function ColorInput({
 }) {
   const handleImageLinkChange = (e) => {
     const { value } = e.target;
-    const linksArray = value.split(",").map((link) => link.trim());
+    const linksArray = value
+      .split(",")
+      .map((link) => link.trim())
+      .filter((link) => link);
+
     handleColorChange(index, {
       target: { name: "imgLink", value: linksArray },
     });
@@ -27,7 +31,7 @@ function ColorInput({
         type="text"
         name="imgLink"
         value={imgLink.join(", ")} // Join array back to comma-separated string for display
-        placeholder={`Image Links ${index + 1}`}
+        placeholder={`Image Links  for ${color}`}
         onChange={handleImageLinkChange}
         className="h-10 rounded-sm my-1 flex-grow mx-2 px-2"
       />

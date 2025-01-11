@@ -28,14 +28,25 @@ const ProductList = () => {
   }
 
   return (
-    <div>
-      <h1>Product List</h1>
-      <ul>
-        {products.map((product) => (
-          <li key={product._id}>{product.name}</li>
-        ))}
-      </ul>
-    </div>
+    <>
+      <h1 className="text-center font-extrabold text-3xl my-5 ">
+        Product List
+      </h1>
+      <section className="border flex space-x-2 p-2 ">
+        {/* filter products */}
+        <aside className=" w-64 p-5 border ">
+          <h3>filter products</h3>
+        </aside>
+
+        {/* products list */}
+        <section className=" flex-grow p-5 border">
+          <h3>All products</h3>
+          {products.map((product) => (
+            <div key={product._id}></div>
+          ))}
+        </section>
+      </section>
+    </>
   );
 };
 

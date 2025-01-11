@@ -1,16 +1,33 @@
-import React, { useState } from "react";
-import ColorInput from "./ColorInput";
+import React, { useState, useEffect } from "react";
+import ColorInput from "./ColorInput"; // Import the new component
 
-function DecoreSpecification({ subcategory }) {
-  const [colors, setColors] = useState([{ color: "", imgLink: "" }]);
+function DecoreSpecification({ subcategory, onChange }) {
+  const [colors, setColors] = useState([{ color: "", imgLink: [] }]);
+
+  useEffect(() => {
+    const specification = {
+      colors,
+      // Add other properties here if needed
+    };
+    onChange(specification); // Call onChange whenever specification data changes
+  }, [colors]);
 
   const addColor = () => {
-    setColors([...colors, { color: "", imgLink: "" }]);
+    setColors([...colors, { color: "", imgLink: [] }]);
   };
 
   const handleColorChange = (index, event) => {
     const newColors = [...colors];
-    newColors[index][event.target.name] = event.target.value;
+    if (
+      event.target.name === "imgLink" &&
+      typeof event.target.value === "string"
+    ) {
+      newColors[index][event.target.name] = event.target.value
+        .split(",")
+        .map((link) => link.trim());
+    } else {
+      newColors[index][event.target.name] = event.target.value;
+    }
     setColors(newColors);
   };
 

@@ -46,29 +46,16 @@ app.post("/api/product", async (req, res) => {
   createDemoJsonFile(product);
 
   // database calling
-  try {
-    await Product.create(product);
-    res.json({ status: "Product created successfully" });
-  } catch (error) {
-    res.json({ status: error });
-    console.log(err);
-  }
+  // try {
+  //   await Product.create(product);
+  //   res.json({ status: "Product created successfully" });
+  // } catch (error) {
+  //   res.json({ status: error });
+  //   console.log(err);
+  // }
 
   res.json({ status: "data written in the file name demo.json" });
 });
-
-// POST /api/products  old endpoint
-// app.post("/api/products", async (req, res) => {
-//   const product = req.body;
-//   console.log("post request:", product);
-//   try {
-//     await Product.create(product);
-//     res.status(201).json({ status: "Product created successfully" });
-//   } catch (err) {
-//     res.status(400).json({ error: err.message });
-//     console.log(err);
-//   }
-// });
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

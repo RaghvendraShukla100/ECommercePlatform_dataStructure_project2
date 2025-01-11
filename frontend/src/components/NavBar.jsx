@@ -41,7 +41,7 @@ const Navbar = () => {
             Order Summary
           </NavLink>
           <NavLink
-            to="/admin"
+            to="/product-hybrid"
             className={({ isActive }) =>
               isActive ? "text-yellow-500 mx-2" : "text-white mx-2"
             }

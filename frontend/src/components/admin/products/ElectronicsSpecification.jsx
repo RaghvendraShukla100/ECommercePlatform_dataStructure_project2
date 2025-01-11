@@ -8,8 +8,7 @@ function ElectronicsSpecification({ subcategory, onChange }) {
     operatingSystem: "",
     ram: "",
     rom: "",
-    cpuModel: "",
-    cpuSpeed: "",
+    camara: "",
     battery: "",
     displayResolution: "",
     simType: "",
@@ -74,7 +73,7 @@ function ElectronicsSpecification({ subcategory, onChange }) {
                 placeholder="Brand"
                 value={specification.brand}
                 onChange={handleInputChange}
-                className="h-10 rounded-sm"
+                className="h-10 rounded-sm px-2"
               />
               <input
                 type="text"
@@ -83,7 +82,7 @@ function ElectronicsSpecification({ subcategory, onChange }) {
                 placeholder="Model"
                 value={specification.model}
                 onChange={handleInputChange}
-                className="h-10 rounded-sm"
+                className="h-10 rounded-sm px-2"
               />
               <input
                 type="text"
@@ -92,7 +91,7 @@ function ElectronicsSpecification({ subcategory, onChange }) {
                 placeholder="Operating System"
                 value={specification.operatingSystem}
                 onChange={handleInputChange}
-                className="h-10 rounded-sm"
+                className="h-10 rounded-sm px-2"
               />
               <input
                 type="text"
@@ -101,7 +100,7 @@ function ElectronicsSpecification({ subcategory, onChange }) {
                 placeholder="RAM (e.g., 8GB)"
                 value={specification.ram}
                 onChange={handleInputChange}
-                className="h-10 rounded-sm"
+                className="h-10 rounded-sm px-2"
               />
               <input
                 type="text"
@@ -110,26 +109,18 @@ function ElectronicsSpecification({ subcategory, onChange }) {
                 placeholder="ROM (e.g., 128GB)"
                 value={specification.rom}
                 onChange={handleInputChange}
-                className="h-10 rounded-sm"
+                className="h-10 rounded-sm px-2"
               />
               <input
                 type="text"
-                id="cpuModel"
-                name="cpuModel"
-                placeholder="CPU Model"
-                value={specification.cpuModel}
+                id="camara"
+                name="camara"
+                placeholder="camara resolution"
+                value={specification.camara}
                 onChange={handleInputChange}
-                className="h-10 rounded-sm"
+                className="h-10 rounded-sm px-2"
               />
-              <input
-                type="text"
-                id="cpuSpeed"
-                name="cpuSpeed"
-                placeholder="CPU Speed (e.g., 2.3 GHz)"
-                value={specification.cpuSpeed}
-                onChange={handleInputChange}
-                className="h-10 rounded-sm"
-              />
+
               <input
                 type="text"
                 id="battery"
@@ -137,7 +128,7 @@ function ElectronicsSpecification({ subcategory, onChange }) {
                 placeholder="Battery (e.g., 5000mAh)"
                 value={specification.battery}
                 onChange={handleInputChange}
-                className="h-10 rounded-sm"
+                className="h-10 rounded-sm px-2"
               />
               <input
                 type="text"
@@ -146,7 +137,7 @@ function ElectronicsSpecification({ subcategory, onChange }) {
                 placeholder="Display Resolution (e.g., 1080 x 2400 pixels)"
                 value={specification.displayResolution}
                 onChange={handleInputChange}
-                className="h-10 rounded-sm"
+                className="h-10 rounded-sm px-2"
               />
               <input
                 type="text"
@@ -155,7 +146,7 @@ function ElectronicsSpecification({ subcategory, onChange }) {
                 placeholder="SIM Type (e.g., Dual SIM)"
                 value={specification.simType}
                 onChange={handleInputChange}
-                className="h-10 rounded-sm"
+                className="h-10 rounded-sm px-2"
               />
               <input
                 type="text"
@@ -164,7 +155,7 @@ function ElectronicsSpecification({ subcategory, onChange }) {
                 placeholder="What's in the Box"
                 value={specification.whatsInTheBox}
                 onChange={handleInputChange}
-                className="h-10 rounded-sm"
+                className="h-10 rounded-sm px-2"
               />
             </div>
             {renderColorInputs()}
@@ -184,7 +175,7 @@ function ElectronicsSpecification({ subcategory, onChange }) {
                 placeholder="Brand"
                 value={specification.brand}
                 onChange={handleInputChange}
-                className="h-10 rounded-sm"
+                className="h-10 rounded-sm px-2"
               />{" "}
               <input
                 type="text"
@@ -193,7 +184,7 @@ function ElectronicsSpecification({ subcategory, onChange }) {
                 placeholder="Model"
                 value={specification.model}
                 onChange={handleInputChange}
-                className="h-10 rounded-sm"
+                className="h-10 rounded-sm px-2"
               />{" "}
               <input
                 type="text"
@@ -202,7 +193,7 @@ function ElectronicsSpecification({ subcategory, onChange }) {
                 placeholder="Operating System"
                 value={specification.operatingSystem}
                 onChange={handleInputChange}
-                className="h-10 rounded-sm"
+                className="h-10 rounded-sm px-2"
               />{" "}
               <input
                 type="text"
@@ -211,7 +202,7 @@ function ElectronicsSpecification({ subcategory, onChange }) {
                 placeholder="RAM (e.g., 8GB)"
                 value={specification.ram}
                 onChange={handleInputChange}
-                className="h-10 rounded-sm"
+                className="h-10 rounded-sm px-2"
               />{" "}
               <input
                 type="text"
@@ -220,7 +211,7 @@ function ElectronicsSpecification({ subcategory, onChange }) {
                 placeholder="ROM (e.g., 256GB)"
                 value={specification.rom}
                 onChange={handleInputChange}
-                className="h-10 rounded-sm"
+                className="h-10 rounded-sm px-2"
               />{" "}
               <input
                 type="text"
@@ -229,7 +220,7 @@ function ElectronicsSpecification({ subcategory, onChange }) {
                 placeholder="CPU Model"
                 value={specification.cpuModel}
                 onChange={handleInputChange}
-                className="h-10 rounded-sm"
+                className="h-10 rounded-sm px-2"
               />{" "}
               <input
                 type="text"
@@ -238,7 +229,7 @@ function ElectronicsSpecification({ subcategory, onChange }) {
                 placeholder="CPU Speed (e.g., 2.8 GHz)"
                 value={specification.cpuSpeed}
                 onChange={handleInputChange}
-                className="h-10 rounded-sm"
+                className="h-10 rounded-sm px-2"
               />{" "}
               <input
                 type="text"
@@ -247,7 +238,7 @@ function ElectronicsSpecification({ subcategory, onChange }) {
                 placeholder="Battery (e.g., 5000mAh)"
                 value={specification.battery}
                 onChange={handleInputChange}
-                className="h-10 rounded-sm"
+                className="h-10 rounded-sm px-2"
               />{" "}
               <input
                 type="text"
@@ -256,7 +247,7 @@ function ElectronicsSpecification({ subcategory, onChange }) {
                 placeholder="Display Resolution (e.g., 1920 x 1080 pixels)"
                 value={specification.displayResolution}
                 onChange={handleInputChange}
-                className="h-10 rounded-sm"
+                className="h-10 rounded-sm px-2"
               />{" "}
             </div>{" "}
             {renderColorInputs()}{" "}
@@ -276,7 +267,7 @@ function ElectronicsSpecification({ subcategory, onChange }) {
                 placeholder="Brand"
                 value={specification.brand}
                 onChange={handleInputChange}
-                className="h-10 rounded-sm"
+                className="h-10 rounded-sm px-2"
               />{" "}
               <input
                 type="text"
@@ -285,7 +276,7 @@ function ElectronicsSpecification({ subcategory, onChange }) {
                 placeholder="Model"
                 value={specification.model}
                 onChange={handleInputChange}
-                className="h-10 rounded-sm"
+                className="h-10 rounded-sm px-2"
               />{" "}
               <input
                 type="text"
@@ -294,7 +285,7 @@ function ElectronicsSpecification({ subcategory, onChange }) {
                 placeholder="Refresh rate"
                 value={specification.refreshrate}
                 onChange={handleInputChange}
-                className="h-10 rounded-sm"
+                className="h-10 rounded-sm px-2"
               />{" "}
               <input
                 type="text"
@@ -303,7 +294,7 @@ function ElectronicsSpecification({ subcategory, onChange }) {
                 placeholder="Display Resolution (e.g., 4K UHD)"
                 value={specification.displayResolution}
                 onChange={handleInputChange}
-                className="h-10 rounded-sm"
+                className="h-10 rounded-sm px-2"
               />{" "}
               <input
                 type="text"

@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import ColorInput from "./ColorInput"; // Import the ColorInput component
 
 function BeautiSkincareSpecification({ subcategory }) {
-  const [colors, setColors] = useState([{ color: "", imgLink: "" }]);
+  const [colors, setColors] = useState([{ color: "", imgLink: [] }]);
 
   const addColor = () => {
-    setColors([...colors, { color: "", imgLink: "" }]);
+    setColors([...colors, { color: "", imgLink: [] }]);
   };
 
   const handleColorChange = (index, event) => {

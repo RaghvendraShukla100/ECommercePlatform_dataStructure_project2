@@ -83,6 +83,8 @@ function AddProductsHibrid() {
       subcategory: subCategory, // Ensure subCategory is included
     };
 
+    console.log("Product data being sent:", productToSend); // Log the product data to ensure it's correct
+
     try {
       const response = await axios.post(
         "http://localhost:3000/api/product",

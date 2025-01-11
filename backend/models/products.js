@@ -1,16 +1,17 @@
 const mongoose = require("mongoose");
 
 const colorSchema = new mongoose.Schema({
-  color: { type: String },
+  color: { type: String, required: true },
   imgLink: [String],
 });
 
 const specificationsSchema = new mongoose.Schema({
-  brand: { type: String },
+  brand: { type: String, required: true },
   model: { type: String },
   operatingSystem: { type: String },
   ram: { type: String },
   rom: { type: String },
+  camara: { type: String },
   cpuModel: { type: String },
   cpuSpeed: { type: String },
   battery: { type: String },
